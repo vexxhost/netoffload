@@ -42,3 +42,54 @@ The most common way to do this is to edit `/etc/default/grub` and add them to
 the `GRUB_CMDLINE_LINUX_DEFAULT` variable, then run `update-grub` to update your
 grub configuration.
 
+### NIC configuration
+
+There are a few steps necessary to configure your NIC for hardware acceleration.
+The exact steps will vary depending on your NIC vendor and model, but the
+following can be used as a guideline.
+
+#### Mellanox
+
+1. Install the `mstflint` tools on the compute node which will be used:
+
+   ```bash
+   sudo apt-get install mstflint
+   ```
+
+1. Get the device's PCI by using `lspci`.
+
+   ```console
+   $ lspci | grep Mellanox
+   61:00.0 Ethernet controller: Mellanox Technologies MT2892 Family [ConnectX-6 Dx]
+   61:00.1 Ethernet controller: Mellanox Technologies MT2892 Family [ConnectX-6 Dx]
+   ```
+
+1. Check if SR-IOV is enabled in the firmware
+
+   ```console
+   $ sudo mstconfig -d 61:00.0 q | grep SRIOV_EN
+        SRIOV_EN                            True(1)
+   ```
+
+   If SR-IOV is not enabled, you can enable it with the following command:
+
+   ```console
+   $ sudo mstconfig -d 61:00.0 set SRIOV_EN=1
+   ```
+
+1. Configure the needed number of VFs
+
+   ```console
+   $ sudo mstconfig -d 61:00.0 set NUM_OF_VFS=16
+   ```
+
+1. Restart the system
+
+   > **Note**
+   >
+   > A useful tip is to prefix this command with an extra space (before `sudo`),
+   > so that it is not saved in the shell history and prevents accidental reboot.
+
+   ```
+   $ sudo reboot
+   ```
