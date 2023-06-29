@@ -93,3 +93,20 @@ following can be used as a guideline.
    ```
    $ sudo reboot
    ```
+
+### Enabling ASAP2
+
+ASAP2 is a Mellanox-specific network hardware acceleration feature.  It can be
+enabled by running the following command:
+
+```console
+$ sudo offloadctl asap2 enable enp97s0f0 --vfs 16
+```
+
+This will enable ASAP2 on the given device (`enp97s0f0` in this example) and
+create 16 VFs.  Once completed, it ensures that the `other-config:hw-offload`
+is set to `true` in the Open vSwitch database.
+
+If it detects that the device is not configured for SR-IOV, it will
+automatically enable it for you or prompt you to do so for steps involving
+reboots.
