@@ -1,10 +1,13 @@
 package asap2
 
 import (
+	"context"
 	"fmt"
 	"log"
 
 	"github.com/k8snetworkplumbingwg/sriovnet"
+	"github.com/ovn-org/libovsdb/client"
+	"github.com/ovn-org/libovsdb/model"
 	"github.com/safchain/ethtool"
 	"github.com/vishvananda/netlink"
 
@@ -48,7 +51,10 @@ func Enable(devName string, vfsCount int) error {
 		return err
 	}
 
-	// TODO: enable hwoffload in ovs
+	err = applyOvsHwOffload()
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -129,6 +135,8 @@ func applyDevlinkEswitchMode(devName string, pciAddress string) error {
 				return fmt.Errorf("devlink: failed to bind VF %d: %w", vf.Index, err)
 			}
 		}
+
+		return nil
 	}
 
 	log.Println("devlink: eswitch mode is already set to switchdev")
@@ -161,6 +169,51 @@ func applyHwTcOffload(devName string) error {
 	}
 
 	log.Println("hw-tc-offload: already enabled")
+
+	return nil
+}
+
+type ovsType struct {
+	UUID        string            `ovsdb:"_uuid"`
+	OtherConfig map[string]string `ovsdb:"other_config"`
+}
+
+func applyOvsHwOffload() error {
+	ctx := context.Background()
+
+	clientDBModel, err := model.NewClientDBModel("Open_vSwitch", map[string]model.Model{
+		"Open_vSwitch": &ovsType{},
+	})
+	if err != nil {
+		return err
+	}
+
+	ovs, err := client.NewOVSDBClient(clientDBModel, client.WithEndpoint("unix:/run/openvswitch/db.sock"))
+	if err != nil {
+		return err
+	}
+
+	if err = ovs.Connect(ctx); err != nil {
+		return err
+	}
+	defer ovs.Disconnect()
+
+	if _, err := ovs.MonitorAll(ctx); err != nil {
+		return err
+	}
+
+	var ovsConfig *ovsType
+	for _, data := range ovs.Cache().Table("Open_vSwitch").Rows() {
+		ovsConfig = data.(*ovsType)
+	}
+
+	offloadEnabled, ok := ovsConfig.OtherConfig["hw-offload"]
+	if !ok || offloadEnabled != "true" {
+		// TODO: enable and restart ovs somehow?
+		return fmt.Errorf("ovs: other-config:hw-offload not enabled")
+	}
+
+	log.Println("ovs: hw-offload already enabled")
 
 	return nil
 }
