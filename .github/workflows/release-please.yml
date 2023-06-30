@@ -22,4 +22,6 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         with:
           src: ghcr.io/vexxhost/netoffload:${{ steps.release.outputs.sha }}
-          dst: ghcr.io/vexxhost/netoffload:${{ steps.release.outputs.tag_name }}
+          dst: |
+            ghcr.io/vexxhost/netoffload:latest
+            ghcr.io/vexxhost/netoffload:${{ steps.release.outputs.tag_name }}
