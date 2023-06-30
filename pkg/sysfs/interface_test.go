@@ -79,7 +79,8 @@ func TestGetVfsMax(t *testing.T) {
 	for name, value := range tests {
 		t.Run(name, func(t *testing.T) {
 			fs := afero.NewMemMapFs()
-			writeInt(fs, "eth0", "sriov_totalvfs", value)
+			err := writeInt(fs, "eth0", "sriov_totalvfs", value)
+			assert.NoError(t, err)
 
 			config, err := GetWithFs(fs, "eth0")
 			assert.NoError(t, err)
