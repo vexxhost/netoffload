@@ -1,9 +1,10 @@
 FROM golang:1.20 AS builder
 WORKDIR /app
-COPY go.mod go.sum /app/
-RUN go mod download
 COPY . /app
-RUN go build -v -o offloadctl cmd/offloadctl/main.go
+RUN \
+  --mount=type=cache,target=/root/.cache/go-build \
+  --mount=type=cache,target=/go/pkg/mod \
+    go build -v -o offloadctl cmd/offloadctl/main.go
 
 FROM ubuntu:22.04
 RUN \
