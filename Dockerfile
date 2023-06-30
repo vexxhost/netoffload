@@ -9,7 +9,7 @@ RUN \
 FROM ubuntu:22.04
 RUN \
   apt-get update && \
-  apt-get install -y mstflint && \
+  apt-get install -y jq mstflint && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 COPY --from=builder /app/offloadctl /usr/local/bin/offloadctl
