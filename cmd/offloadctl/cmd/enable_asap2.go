@@ -24,7 +24,10 @@ var enableAsap2Cmd = &cobra.Command{
 
 func init() {
 	enableAsap2Cmd.Flags().IntVarP(&VfsCount, "vfs", "v", 0, "Number of VFs to enable")
-	enableAsap2Cmd.MarkFlagRequired("vfs")
+	err := enableAsap2Cmd.MarkFlagRequired("vfs")
+	if err != nil {
+		panic(err)
+	}
 
 	enableCmd.AddCommand(enableAsap2Cmd)
 }
