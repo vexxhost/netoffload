@@ -103,6 +103,20 @@ enabled by running the following command:
 $ sudo offloadctl asap2 enable enp97s0f0 --vfs 16
 ```
 
+If you're running `containerd` on the host, you can also use `ctr` to run the
+container:
+
+```console
+$ ctr run \
+    --rm \
+    --net-host \
+    --privileged \
+    --mount type=bind,src=/run,dst=/run,options=rbind:rw \
+    ghcr.io/vexxhost/netoffload:latest \
+    netoffload \
+    offloadctl enable asap2 enp97s0f0 --vfs 16
+```
+
 This will enable ASAP2 on the given device (`enp97s0f0` in this example) and
 create 16 VFs.  Once completed, it ensures that the `other-config:hw-offload`
 is set to `true` in the Open vSwitch database.
