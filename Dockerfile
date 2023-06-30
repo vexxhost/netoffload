@@ -1,6 +1,8 @@
 FROM golang:1.20 AS builder
-COPY . /app
 WORKDIR /app
+COPY go.mod go.sum /app/
+RUN go mod download
+COPY . /app
 RUN go build -v -o offloadctl cmd/offloadctl/main.go
 
 FROM ubuntu:22.04
