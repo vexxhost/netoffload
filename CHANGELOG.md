@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/vexxhost/netoffload/compare/v1.0.0...v1.0.1) (2023-06-30)
+
+
+### Bug Fixes
+
+* added jq to docker image ([9e864da](https://github.com/vexxhost/netoffload/commit/9e864daaf2dee62b3435a0991d5526737b8bcdf2))
+
 ## 1.0.0 (2023-06-30)
 
 
