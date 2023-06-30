@@ -18,6 +18,12 @@ jobs:
         with:
           release-type: go
           package-name: netoffload
+      - uses: docker/login-action@v2
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - uses: akhilerm/tag-push-action@v2.1.0
         if: ${{ steps.release.outputs.release_created }}
         with:
