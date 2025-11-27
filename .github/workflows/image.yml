@@ -2,28 +2,21 @@ name: image
 
 on:
   pull_request:
+  workflow_dispatch:
   push:
     branches:
       - main
 
-permissions:
-  packages: write
-  contents: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
     steps:
-      - uses: docker/setup-qemu-action@v2
-      - uses: docker/setup-buildx-action@v2
-      - uses: docker/login-action@v2
+      - uses: actions/checkout@v4
+      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v4
-        with:
-          push: "${{ github.event_name == 'push' }}"
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          tags: ghcr.io/vexxhost/netoffload:${{ github.sha }}
+          image-name: netoffload
+          push: ${{ github.event_name != 'pull_request' }}
