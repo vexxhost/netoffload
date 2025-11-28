@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/vexxhost/netoffload/compare/v1.0.1...v1.1.0) (2025-11-28)
+
+
+### Features
+
+* use docker-atmosphere for image builds ([772de5e](https://github.com/vexxhost/netoffload/commit/772de5e96fe550938179663b1c8bdca5b54a6df8))
+
 ## [1.0.1](https://github.com/vexxhost/netoffload/compare/v1.0.0...v1.0.1) (2023-06-30)
 
 
