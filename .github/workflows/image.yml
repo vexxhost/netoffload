@@ -15,7 +15,6 @@ jobs:
       id-token: write
       packages: write
     steps:
-      - uses: actions/checkout@v4
       - uses: vexxhost/docker-atmosphere/.github/actions/build-image@main
         with:
           image-name: netoffload
