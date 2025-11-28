@@ -10,22 +10,22 @@ jobs:
   golangci-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
-      - uses: golangci/golangci-lint-action@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      - uses: actions/setup-go@19bb51245e9c80abacb2e91cc42b33fa478b8639 # v4
+      - uses: golangci/golangci-lint-action@3a919529898de77ec3da873e3063ca4b10e7f5cc # v3
 
   test:
     runs-on: ubuntu-latest
     permissions:
       checks: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      - uses: actions/setup-go@19bb51245e9c80abacb2e91cc42b33fa478b8639 # v4
       - name: run tests
         run: |
           go install github.com/jstemmer/go-junit-report/v2@latest
           go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
-      - uses: mikepenz/action-junit-report@v3
+      - uses: mikepenz/action-junit-report@150e2f992e4fad1379da2056d1d1c279f520e058 # v3
         if: success() || failure() # always run even if the previous step fails
         with:
           report_paths: report.xml
