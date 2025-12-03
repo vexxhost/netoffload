@@ -25,7 +25,7 @@ jobs:
         run: |
           go install github.com/jstemmer/go-junit-report/v2@latest
           go test -v 2>&1 ./... | go-junit-report -set-exit-code > report.xml
-      - uses: mikepenz/action-junit-report@v3
+      - uses: mikepenz/action-junit-report@e08919a3b1fb83a78393dfb775a9c37f17d8eea6 # v6.0.1
         if: success() || failure() # always run even if the previous step fails
         with:
           report_paths: report.xml
