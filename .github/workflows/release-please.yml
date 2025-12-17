@@ -24,7 +24,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: akhilerm/tag-push-action@v2.1.0
+      - uses: akhilerm/tag-push-action@f35ff2cb99d407368b5c727adbcc14a2ed81d509 # v2.2.0
         if: ${{ steps.release.outputs.release_created }}
         with:
           src: ghcr.io/vexxhost/netoffload:${{ steps.release.outputs.sha }}
