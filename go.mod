@@ -8,7 +8,7 @@ require (
 	github.com/ovn-org/libovsdb v0.6.1-0.20230628132214-745dea0a69ec
 	github.com/safchain/ethtool v0.7.0
 	github.com/spf13/afero v1.15.0
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.11.1
 	github.com/u-root/u-root v0.15.0
 	github.com/vishvananda/netlink v1.3.1
@@ -32,7 +32,7 @@ require (
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.32.1 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect
-	github.com/spf13/pflag v1.0.7 // indirect
+	github.com/spf13/pflag v1.0.9 // indirect
 	github.com/vishvananda/netns v0.0.5 // indirect
 	golang.org/x/sys v0.38.0 // indirect
 	golang.org/x/text v0.28.0 // indirect
