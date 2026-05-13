@@ -29,7 +29,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: step-security/tag-push-action@3816dac78b3f61b986acdf67bd01277d10f42a7c # v2.2.0
+      - uses: step-security/tag-push-action@aae70939887bfb2a2ae8314fd4650381ca2cc2ae # v2.2.1
         if: ${{ steps.release.outputs.release_created }}
         with:
           src: ghcr.io/vexxhost/netoffload:${{ steps.release.outputs.sha }}
