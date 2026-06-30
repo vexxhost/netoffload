@@ -4,7 +4,7 @@ go 1.24.0
 
 require (
 	github.com/k8snetworkplumbingwg/sriovnet v1.2.0
-	github.com/klauspost/cpuid/v2 v2.3.0
+	github.com/klauspost/cpuid/v2 v2.4.0
 	github.com/ovn-org/libovsdb v0.6.1-0.20230628132214-745dea0a69ec
 	github.com/safchain/ethtool v0.7.0
 	github.com/spf13/afero v1.15.0
