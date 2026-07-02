@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/vexxhost/netoffload/compare/v1.1.0...v1.1.1) (2026-07-02)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/klauspost/cpuid/v2 to v2.4.0 ([#80](https://github.com/vexxhost/netoffload/issues/80)) ([b490f30](https://github.com/vexxhost/netoffload/commit/b490f30661f8d3558ddac1f459d0985c25323053))
+
 ## [1.1.0](https://github.com/vexxhost/netoffload/compare/v1.0.1...v1.1.0) (2026-05-21)
 
 
