@@ -1,9 +1,9 @@
 module github.com/vexxhost/netoffload
 
-go 1.24.0
+go 1.25.0
 
 require (
-	github.com/k8snetworkplumbingwg/sriovnet v1.2.0
+	github.com/k8snetworkplumbingwg/sriovnet v1.3.0
 	github.com/klauspost/cpuid/v2 v2.4.0
 	github.com/ovn-org/libovsdb v0.6.1-0.20230628132214-745dea0a69ec
 	github.com/safchain/ethtool v0.7.0
@@ -11,7 +11,7 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.11.1
 	github.com/u-root/u-root v0.16.0
-	github.com/vishvananda/netlink v1.3.1
+	github.com/vishvananda/netlink v1.3.2-0.20251101063711-6e61cd407d1d
 )
 
 require (
