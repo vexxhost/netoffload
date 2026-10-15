@@ -24,7 +24,7 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@15f30aa3f1fff75915cf230d19e00a54324d6ec7 # main
+      - uses: vexxhost/docker-atmosphere/.github/actions/build-image@d8ddc2c298084f3364e40082a91614cbfc7ded90 # main
         with:
           image-name: netoffload
           push: ${{ github.event_name != 'pull_request' }}
