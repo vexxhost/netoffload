@@ -280,6 +280,8 @@ github.com/vishvananda/netlink v1.3.1 h1:3AEMt62VKqz90r0tmNhog0r/PpWKmrEShJU0wJW
 github.com/vishvananda/netlink v1.3.1/go.mod h1:ARtKouGSTGchR8aMwmkzC0qiNPrrWO5JS/XMVl45+b4=
 github.com/vishvananda/netlink v1.3.2-0.20251101063711-6e61cd407d1d h1:5h3+A6LmhpUTF1qwceYJp/goLCgyvnPbSTDYqcVVhGA=
 github.com/vishvananda/netlink v1.3.2-0.20251101063711-6e61cd407d1d/go.mod h1:lEui7SPMd9fgxzHVGRAvTxsBGCF6PRH81o2kLWLWHgw=
+github.com/vishvananda/netlink v1.3.2-0.20261027142342-e536899290fe h1:QwOqKmBH3oVfqR70bdpD+VejLKlP2JUJKvDRbrn3bY8=
+github.com/vishvananda/netlink v1.3.2-0.20261027142342-e536899290fe/go.mod h1:lEui7SPMd9fgxzHVGRAvTxsBGCF6PRH81o2kLWLWHgw=
 github.com/vishvananda/netns v0.0.0-20200728191858-db3c7e526aae/go.mod h1:DD4vA1DwXk04H54A1oHXtwZmA0grkVMdPxx/VGLCah0=
 github.com/vishvananda/netns v0.0.4 h1:Oeaw1EM2JMxD51g9uhtC0D7erkIjgmj8+JZc26m1YX8=
 github.com/vishvananda/netns v0.0.4/go.mod h1:SpkAiCQRtJ6TvvxPnOSyH3BMl6unz3xZlaprSwhNNJM=

@@ -11,7 +11,7 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.12.1
 	github.com/u-root/u-root v0.16.0
-	github.com/vishvananda/netlink v1.3.2-0.20251101063711-6e61cd407d1d
+	github.com/vishvananda/netlink v1.3.2-0.20261027142342-e536899290fe
 )
 
 require (
