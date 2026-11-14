@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.1](https://github.com/vexxhost/netoffload/compare/v1.1.0...v1.1.1) (2026-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update github.com/vishvananda/netlink digest to 2cd1a50 ([#131](https://github.com/vexxhost/netoffload/issues/131)) ([75cc8c1](https://github.com/vexxhost/netoffload/commit/75cc8c1bf24e6510821a3beb865f5dfa7bb3a265))
+* **deps:** update github.com/vishvananda/netlink digest to e0e26cd ([#139](https://github.com/vexxhost/netoffload/issues/139)) ([01427db](https://github.com/vexxhost/netoffload/commit/01427dbc3051bb785feea33b9e4234aafa252afa))
+* **deps:** update github.com/vishvananda/netlink digest to e536899 ([#129](https://github.com/vexxhost/netoffload/issues/129)) ([3511592](https://github.com/vexxhost/netoffload/commit/3511592c433457fe74dd4472cb13a0dac06d8683))
+* **deps:** update module github.com/k8snetworkplumbingwg/sriovnet to v1.3.0 ([#71](https://github.com/vexxhost/netoffload/issues/71)) ([b211d64](https://github.com/vexxhost/netoffload/commit/b211d6441e89850315c18c76915a54a14b6782ed))
+* **deps:** update module github.com/klauspost/cpuid/v2 to v2.4.0 ([#80](https://github.com/vexxhost/netoffload/issues/80)) ([b490f30](https://github.com/vexxhost/netoffload/commit/b490f30661f8d3558ddac1f459d0985c25323053))
+* **deps:** update module github.com/klauspost/cpuid/v2 to v2.4.1 ([#122](https://github.com/vexxhost/netoffload/issues/122)) ([4e97f01](https://github.com/vexxhost/netoffload/commit/4e97f010a86b5161869fdcf3c570e79c72d913ec))
+* **deps:** update module github.com/klauspost/cpuid/v2 to v2.4.2 ([#132](https://github.com/vexxhost/netoffload/issues/132)) ([91d8ed3](https://github.com/vexxhost/netoffload/commit/91d8ed3264fb52fb32ac744f0ca6ed19f6426972))
+* **deps:** update module github.com/stretchr/testify to v1.12.1 ([#97](https://github.com/vexxhost/netoffload/issues/97)) ([a9207a4](https://github.com/vexxhost/netoffload/commit/a9207a4c43f768297476f6b9ed66f8aa37838b94))
+
 ## [1.1.0](https://github.com/vexxhost/netoffload/compare/v1.0.1...v1.1.0) (2026-05-21)
 
 
